@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Card } from "./Card"
 import { FadeInSection } from "./Animations"
-import { GitHubUserName } from "../constants/NameData"
+import { GitHubUserName, IMAGE_BASE_URL } from "../constants/NameData"
 
 export const GithubProjects = () => {
     const [projects, setProjects] = useState([])
@@ -23,10 +23,10 @@ export const GithubProjects = () => {
                     href: project.homepage ? project.homepage : project.html_url,
                     git: project.html_url,
                     description: project.description,
-                    image: project.owner.avatar_url,
+                    image: IMAGE_BASE_URL + project.name + '.png',
                     language: project.language,
                     tag: project.topics.map((topic: any) => topic).join(','),
-                    tagcolor: 'hover:bg-rose-800 border-rose-800 text-rose-800'
+                    tagcolor: 'border-rose-800 text-rose-800 bg-rose-50 hover:text-rose-50 hover:bg-rose-800'
                 }
             })
         setProjects(project)
@@ -39,10 +39,10 @@ export const GithubProjects = () => {
                     href: project.homepage ? project.homepage : project.html_url,
                     git: project.html_url,
                     description: project.description,
-                    image: project.owner.avatar_url,
+                    image: IMAGE_BASE_URL + project.name + '.png',
                     language: project.language,
                     tag: 'react',
-                    tagcolor: 'hover:bg-indigo-800 border-indigo-800 text-indigo-800'
+                    tagcolor: 'border-indigo-800 text-indigo-800 bg-indigo-50 hover:text-indigo-50 hover:bg-indigo-800'
                 }
             })
             .reverse()  // this will make repos with initial letters go to last
@@ -56,10 +56,10 @@ export const GithubProjects = () => {
                     href: project.homepage ? project.homepage : project.html_url,
                     git: project.html_url,
                     description: project.description,
-                    image: project.owner.avatar_url,
+                    image: IMAGE_BASE_URL + project.name + '.png',
                     language: project.language,
                     tag: 'dotnet',
-                    tagcolor: 'hover:bg-green-800 border-green-800 text-green-800'
+                    tagcolor: 'border-green-800 text-green-800 bg-green-50 hover:text-green-50 hover:bg-green-800'
                 }
             })
             .reverse()  // this will make repos with initial letters go to last

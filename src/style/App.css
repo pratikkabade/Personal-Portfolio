@@ -1,0 +1,118 @@
+.custom-img {
+    background-image: url("https://miro.medium.com/v2/resize:fit:1100/1*5nV87028G6Z7RSVtOwlViQ.png");
+}
+
+.fullpage {
+    display: flex;
+    overflow: auto;
+    flex: none;
+
+    flex-flow: column nowrap;
+
+    scroll-snap-type: y mandatory;
+}
+
+.fullpage>div {
+    scroll-snap-align: center;
+    flex: none;
+}
+
+.caraosel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: scroll;
+    left: 0 !important;
+    width: 100% !important;
+}
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateX(-50px);
+    visibility: hidden;
+    transition: opacity 1s ease-out, transform 1s ease-out !important;
+    will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+}
+
+.move-down-section {
+    opacity: 0;
+    transform: translateY(-20px);
+    visibility: hidden;
+    transition: opacity 1s ease-out, transform 1s ease-out !important;
+    will-change: opacity, visibility;
+}
+
+.move-down-section.is-visible {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+}
+
+.caraosel::-webkit-scrollbar {
+    height: 25px;
+}
+
+/* Track */
+.caraosel::-webkit-scrollbar-track {
+    --tw-bg-opacity: 0;
+    background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+
+/* Handle */
+.caraosel::-webkit-scrollbar-thumb {
+    --tw-bg-opacity: 1;
+    border-radius: 5px 5px 0 0 ;
+    background: linear-gradient(to right, #33a18b, #2d927e);
+}
+
+/* Handle on hover */
+.caraosel::-webkit-scrollbar-thumb:hover {
+    --tw-bg-opacity: 1;
+    border-radius: 15px 15px 0 0 ;
+    background: linear-gradient(to right, #3c9886, #348f7d);
+}
+
+.curved-gradient-bottom {
+    background: linear-gradient(to bottom, #acb6e5, #86fde8);
+    /* Adjust the colors as needed */
+    border-radius: 0 0 50% 50%/0 0 10vw 10vw;
+    /* Adjust the border-radius values for the desired curve */
+}
+
+.inclined {
+    background: linear-gradient(to bottom, #2193b0, #6dd5ed);
+    border-radius: 0 0 10vw 10vw / 2vw 2vw 0 0;
+    transform: rotate(-1deg);
+    /* transform-origin: bottom center; */
+    padding: 1rem;
+}
+
+.uninclined {
+    transform: rotate(1deg);
+}
+
+.curved-gradient-bottom {
+    background: linear-gradient(to bottom, #ffeeca, #dbffe8);
+    border-radius: 0 0 10% 10%/0 0 10vw 10vw;
+}
+
+.curved-gradient-top {
+    background: linear-gradient(to top, #43C6AC, #F8FFAE);
+    border-radius: 10% 10% 0 0/10vw 10vw 0 0;
+}
+
+.border-gradient-rounded {
+    /* Border */
+    border: 4px solid transparent;
+    background:
+        linear-gradient(to right, white, white),
+        linear-gradient(to right, red, blue);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}

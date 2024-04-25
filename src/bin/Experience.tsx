@@ -1,5 +1,5 @@
 import { FadeInSection, MoveDownSection } from "../components/Animations"
-import { ExperienceData } from "../constants/ExperienceData"
+import { ExperienceData } from "./ExperienceData"
 
 export const Experience = () => {
     return (
@@ -24,10 +24,10 @@ export const Experience = () => {
                                     <FadeInSection>
                                         <div className="flex flex-row rounded-xl p-5 bg-slate-50 border-2 border-neutral-600 hover:shadow-lg">
                                             <div>
-                                                <img 
-                                                className="h-32 rounded-xl mr-5"
-                                                src={data.logo} 
-                                                alt="logo" />
+                                                <img
+                                                    className="h-32 rounded-xl mr-5"
+                                                    src={data.logo}
+                                                    alt="logo" />
                                             </div>
                                             <div className="flex flex-col">
                                                 <div className="text-3xl max-lg:text-xl font-bold">

@@ -67,14 +67,14 @@
 /* Handle */
 .caraosel::-webkit-scrollbar-thumb {
     --tw-bg-opacity: 1;
-    border-radius: 5px 5px 0 0 ;
+    border-radius: 5px 5px 0 0;
     background: linear-gradient(to right, #33a18b, #2d927e);
 }
 
 /* Handle on hover */
 .caraosel::-webkit-scrollbar-thumb:hover {
     --tw-bg-opacity: 1;
-    border-radius: 15px 15px 0 0 ;
+    border-radius: 15px 15px 0 0;
     background: linear-gradient(to right, #3c9886, #348f7d);
 }
 
@@ -102,9 +102,17 @@
     border-radius: 0 0 10% 10%/0 0 10vw 10vw;
 }
 
-.curved-gradient-top {
-    background: linear-gradient(to top, #43C6AC, #F8FFAE);
-    border-radius: 10% 10% 0 0/10vw 10vw 0 0;
+.curved-gradient-footer {
+    background: linear-gradient(to top, rgba(255, 0, 0, 0.1), rgba(0, 0, 255, 0.1));
+
+    /* Set a specific height */
+    min-height: 100vh;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .border-gradient-rounded {
@@ -116,3 +124,22 @@
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;
 }
+
+
+.parallax {
+    /* The image used */
+    background: linear-gradient(to top, #00f6c5, #eeff36);
+    border-radius: 10% 10% 0 0/10vw 10vw 0 0;
+
+    /* Set a specific height */
+    min-height: 100vh;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* keep content fixed */

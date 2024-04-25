@@ -4,17 +4,17 @@ import './style/App.css';
 import './style/index.css';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
-import { Experience } from './pages/Experience';
-import { Education } from './pages/Education';
 
 function App() {
   return (
     <div className='fullpage h-screen select-none'>
       <Home />
       <About />
-      <Projects />
-      <Experience />
-      <Education />
+
+      <div className="parallax">
+        <Projects />
+      </div>
+
       <Contact />
     </div>
   );

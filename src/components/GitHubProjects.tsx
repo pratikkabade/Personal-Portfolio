@@ -26,7 +26,7 @@ export const GithubProjects = () => {
                     image: project.owner.avatar_url,
                     language: project.language,
                     tag: project.topics.map((topic: any) => topic).join(','),
-                    tagcolor: 'bg-slate-700'
+                    tagcolor: 'hover:bg-rose-800 border-rose-800 text-rose-800'
                 }
             })
         setProjects(project)
@@ -42,7 +42,7 @@ export const GithubProjects = () => {
                     image: project.owner.avatar_url,
                     language: project.language,
                     tag: 'react',
-                    tagcolor: 'bg-teal-600'
+                    tagcolor: 'hover:bg-indigo-800 border-indigo-800 text-indigo-800'
                 }
             })
         setRProjects(rproject)
@@ -58,7 +58,7 @@ export const GithubProjects = () => {
                     image: project.owner.avatar_url,
                     language: project.language,
                     tag: 'dotnet',
-                    tagcolor: 'bg-green-600'
+                    tagcolor: 'hover:bg-green-800 border-green-800 text-green-800'
                 }
             })
         setDProjects(dproject)

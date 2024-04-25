@@ -1,5 +1,5 @@
 import { FadeInSection, MoveDownSection } from "../components/Animations"
-import { EducationData, SkillsData } from "../constants/EducationData"
+import { EducationData, SkillsData } from "./EducationData"
 
 export const Education = () => {
     return (

@@ -1,18 +1,18 @@
 export const ContactData = [
     {
-        title: "Email",
+        title: "Email Me",
         url: "mailto:pratik.kabade@outlook.com",
-        icon: <i className="fas fa-envelope mr-2 text-gray-500"></i>,
+        icon: <i className="fas fa-at mr-2 group-hover:text-white"></i>,
     },
     {
         title: "LinkedIn",
         url: "https://www.linkedin.com/in/pratikkabade/",
-        icon: <i className="fab fa-linkedin mr-2 text-blue-700"></i>
+        icon: <i className="fab fa-linkedin text-7xl hover:brightness-150 text-blue-700"></i>
     },
     {
         title: "GitHub",
         url: "https://github.com/pratikkabade",
-        icon: <i className="fab fa-github mr-2 text-black"></i>
+        icon: <i className="fab fa-github text-7xl hover:text-slate-700 text-black"></i>
     },
     {
         title: "Resume",

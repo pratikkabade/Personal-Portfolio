@@ -9,7 +9,7 @@ export const Projects = () => {
                     <div className="text-7xl max-md:text-5xl max-lg:text-center font-bold
                 text-white px-7 py-3 rounded-full w-fit
                 hover:brightness-105
-                bg-gradient-to-r from-black via-slate-500 to-black bg-clip-text text-transparent">
+                bg-gradient-to-r from-lime-600 via-emerald-500 to-lime-600 bg-clip-text text-transparent">
                         My Open-Sourced Projects
                     </div>
                 </MoveDownSection>

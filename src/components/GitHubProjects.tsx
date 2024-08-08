@@ -7,7 +7,7 @@ export const GithubProjects = () => {
     const [projects, setProjects] = useState([])
     const [rprojects, setRProjects] = useState([])
     const [dprojects, setDProjects] = useState([])
-    const [show, setShow] = useState(false)
+    // const [show, setShow] = useState(false)
 
     const url = 'https://api.github.com/users/' + GitHubUserName + '/repos'
 
@@ -45,6 +45,7 @@ export const GithubProjects = () => {
                     tagcolor: 'hover:bg-indigo-800 border-indigo-800 text-indigo-800'
                 }
             })
+            .reverse()  // this will make repos with initial letters go to last
         setRProjects(rproject)
 
         const dproject = data
@@ -61,6 +62,7 @@ export const GithubProjects = () => {
                     tagcolor: 'hover:bg-green-800 border-green-800 text-green-800'
                 }
             })
+            .reverse()  // this will make repos with initial letters go to last
         setDProjects(dproject)
     }
 
@@ -71,69 +73,54 @@ export const GithubProjects = () => {
 
 
     return (
-        <>
-
-            {projects.map((project: any) => {
-                return (
-                    <Card
-                        name={project.name}
-                        git={project.git}
-                        href={project.href}
-                        description={project.description}
-                        image={project.image}
-                        language={project.language}
-                        tag={project.tag}
-                        tagcolor={project.tagcolor}
-                        key={project.name}
-                    />
-                )
-            })}
-            {
-                show ?
-                    <>
-                        {rprojects.map((project: any) => {
-                            return (
-                                <Card
-                                    name={project.name}
-                                    git={project.git}
-                                    href={project.href}
-                                    description={project.description}
-                                    image={project.image}
-                                    language={project.language}
-                                    tag={project.tag}
-                                    tagcolor={project.tagcolor}
-                                    key={project.name}
-                                />
-                            )
-                        })}
-                        {dprojects.map((project: any) => {
-                            return (
-                                <Card
-                                    name={project.name}
-                                    git={project.git}
-                                    href={project.href}
-                                    description={project.description}
-                                    image={project.image}
-                                    language={project.language}
-                                    tag={project.tag}
-                                    tagcolor={project.tagcolor}
-                                    key={project.name}
-                                />
-                            )
-                        })}
-                    </>
-                    :
-                    <FadeInSection>
-                        <div
-                            onClick={() => setShow(true)}
-                            className="cursor-pointer w-fit h-fit shrink-0 hover:scale-105 bg-slate-50 border-2 border-neutral-600 p-5 m-5 hover:shadow-md z-0 group rounded-lg text-xl font-bold">
-                            <h3>Depricated Projects</h3>
-                            <h4 className="text-center">
-                                <i className="fas fa-arrow-right"></i>
-                            </h4>
-                        </div>
-                    </FadeInSection>
-            }
-        </>
+        <FadeInSection>
+            <div className="flex flex-row align-middle items-center justify-center">
+                {projects.map((project: any) => {
+                    return (
+                        <Card
+                            name={project.name}
+                            git={project.git}
+                            href={project.href}
+                            description={project.description}
+                            image={project.image}
+                            language={project.language}
+                            tag={project.tag}
+                            tagcolor={project.tagcolor}
+                            key={project.name}
+                        />
+                    )
+                })}
+                {rprojects.map((project: any) => {
+                    return (
+                        <Card
+                            name={project.name}
+                            git={project.git}
+                            href={project.href}
+                            description={project.description}
+                            image={project.image}
+                            language={project.language}
+                            tag={project.tag}
+                            tagcolor={project.tagcolor}
+                            key={project.name}
+                        />
+                    )
+                })}
+                {dprojects.map((project: any) => {
+                    return (
+                        <Card
+                            name={project.name}
+                            git={project.git}
+                            href={project.href}
+                            description={project.description}
+                            image={project.image}
+                            language={project.language}
+                            tag={project.tag}
+                            tagcolor={project.tagcolor}
+                            key={project.name}
+                        />
+                    )
+                })}
+            </div>
+        </FadeInSection>
     )
 }

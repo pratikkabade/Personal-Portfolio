@@ -45,7 +45,7 @@ export function MoveDownSection(props: any) {
     }, []);
     return (
         <div
-            className={`move-down-section w-fit ${isVisible ? 'is-visible' : ''}`}
+            className={`move-down-section h-fit w-fit ${isVisible ? 'is-visible' : ''}`}
             ref={domRef}
         >
             {props.children}

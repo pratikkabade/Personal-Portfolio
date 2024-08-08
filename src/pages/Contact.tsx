@@ -3,13 +3,13 @@ import { ContactData } from "../constants/ContactData"
 
 export const Contact = () => {
     return (
-        <div className="h-screen flex flex-col items-center curved-gradient-footer">
+        <div className="h-screen flex flex-col items-center bg-gradient-to-b from-teal-200 to-green-200">
             <div className="flex flex-col items-center">
                 <MoveDownSection>
                     <div className="text-7xl max-md:text-5xl font-bold
                  px-7 py-3 rounded-full text-center w-fit
                  hover:brightness-105
-                 bg-gradient-to-r from-sky-700 via-emerald-700 to-blue-700 bg-clip-text text-transparent">
+                 bg-gradient-to-r from-sky-700 via-blue-700 to-purple-700 bg-clip-text text-transparent">
                         Contact me
                     </div>
                 </MoveDownSection>

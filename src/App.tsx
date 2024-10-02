@@ -1,19 +1,10 @@
-import { Projects } from './pages/Projects';
-import { Home } from './pages/Home';
+import { AppRoutes } from './routes/AppRoutes';
 import './style/App.css';
 import './style/index.css';
-// import { About } from './pages/About';
-import { Contact } from './pages/Contact';
 
 function App() {
   return (
-    <div className='fullpage h-screen select-none'>
-      <Home />
-
-      <Projects />
-
-      <Contact />
-    </div>
+    <AppRoutes />
   );
 }
 

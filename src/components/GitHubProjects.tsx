@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Card } from "./Card"
 import { FadeInSection } from "./Animations"
 import { GitHubUserName, IMAGE_BASE_URL } from "../constants/NameData"
@@ -25,7 +25,7 @@ export const GithubProjects = () => {
                     description: project.description,
                     image: IMAGE_BASE_URL + project.name + '.png',
                     language: project.language,
-                    tag: project.topics.map((topic: any) => topic).join(','),
+                    tag: project.topics[0],
                     tagcolor: 'border-rose-800 text-rose-800 bg-rose-50 hover:text-rose-50 hover:bg-rose-800'
                 }
             })
@@ -66,60 +66,35 @@ export const GithubProjects = () => {
         setDProjects(dproject)
     }
 
-    // only fetch data once
-    if (projects.length === 0) {
-        fetchData()
-    }
+    useEffect(() => {
+        const storedProjects = localStorage.getItem("projects");
+        const storedRProjects = localStorage.getItem("rprojects");
+        const storedDProjects = localStorage.getItem("dprojects");
+
+        if (storedProjects && storedRProjects && storedDProjects) {
+            // Load from localStorage
+            setProjects(JSON.parse(storedProjects));
+            setRProjects(JSON.parse(storedRProjects));
+            setDProjects(JSON.parse(storedDProjects));
+        } else {
+            // Fetch and save data
+            fetchData();
+        }
+    }, []);
 
 
     return (
         <FadeInSection>
             <div className="flex flex-row align-middle items-center justify-center">
-                {projects.map((project: any) => {
-                    return (
-                        <Card
-                            name={project.name}
-                            git={project.git}
-                            href={project.href}
-                            description={project.description}
-                            image={project.image}
-                            language={project.language}
-                            tag={project.tag}
-                            tagcolor={project.tagcolor}
-                            key={project.name}
-                        />
-                    )
-                })}
-                {rprojects.map((project: any) => {
-                    return (
-                        <Card
-                            name={project.name}
-                            git={project.git}
-                            href={project.href}
-                            description={project.description}
-                            image={project.image}
-                            language={project.language}
-                            tag={project.tag}
-                            tagcolor={project.tagcolor}
-                            key={project.name}
-                        />
-                    )
-                })}
-                {dprojects.map((project: any) => {
-                    return (
-                        <Card
-                            name={project.name}
-                            git={project.git}
-                            href={project.href}
-                            description={project.description}
-                            image={project.image}
-                            language={project.language}
-                            tag={project.tag}
-                            tagcolor={project.tagcolor}
-                            key={project.name}
-                        />
-                    )
-                })}
+                {projects.map((project: any) => (
+                    <Card {...project} key={project.name} />
+                ))}
+                {rprojects.map((project: any) => (
+                    <Card {...project} key={project.name} />
+                ))}
+                {dprojects.map((project: any) => (
+                    <Card {...project} key={project.name} />
+                ))}
             </div>
         </FadeInSection>
     )

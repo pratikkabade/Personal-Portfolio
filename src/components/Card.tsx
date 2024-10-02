@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { FadeInSection } from "./Animations"
 
 export const Card = (props: any) => {
@@ -14,7 +15,7 @@ export const Card = (props: any) => {
                             <></> :
                             <img src={props.image} alt="logo" className="w-52 h-28 max-lg:w-28 max-lg:h-16 rounded-lg" />
                     }
-                    <h1 className="text-xl max-lg:text-lg font-bold mt-2">
+                    <h1 className="text-xl max-lg:text-lg font-bold mt-2 w-48 max-lg:w-32">
                         {props.name}
                         <i className="fas fa-external-link-alt ml-2 opacity-0 group-hover:opacity-100"></i>
                         <a
@@ -32,18 +33,20 @@ export const Card = (props: any) => {
                             {props?.description?.length > 100 ? props.description.slice(0, 100) + '...' : props.description}
                         </span>
                     </h2>
-                    <p
-                        className={`mt-2 border-2 w-fit 
+                    <Link to='/AllProjects'>
+                        <p
+                            className={`mt-2 border-2 w-fit 
                             ${props.tagcolor}
                             hover:bg-opacity-80
                             font-bold text-lg max-lg:text-sm max-md:text-sm rounded-full w-fit px-4 py-0.5 z-10`}>
-                        <span className="hidden max-lg:flex">
-                            {props?.tag?.length > 10 ? props.tag.slice(0, 10) + '...' : props.tag}
-                        </span>
-                        <span className="flex max-lg:hidden">
-                            {props?.tag}
-                        </span>
-                    </p>
+                            <span className="hidden max-lg:flex">
+                                {props?.tag?.length > 10 ? props.tag.slice(0, 10) + '...' : props.tag}
+                            </span>
+                            <span className="flex max-lg:hidden">
+                                {props?.tag}
+                            </span>
+                        </p>
+                    </Link>
                 </a>
             </div>
         </FadeInSection>
